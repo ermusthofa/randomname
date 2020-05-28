@@ -1,7 +1,15 @@
 package main
 
-import "github.com/ermusthofa/triviadate/backend/api"
+import (
+	"github.com/ermusthofa/triviadate/backend/api"
+	"github.com/ermusthofa/triviadate/backend/api/config"
+	"github.com/ermusthofa/triviadate/backend/api/model"
+)
 
 func main() {
-	api.Run()
+
+	var runtimeConfiguration model.Config
+	config.LoadConfiguration(&runtimeConfiguration)
+
+	api.Run(runtimeConfiguration)
 }
