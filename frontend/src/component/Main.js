@@ -16,17 +16,17 @@ class Main extends React.Component {
     const dt = new Date().getDate()
     const mt = new Date().getMonth() + 1
 
-    const url =  process.env.REACT_APP_BACKEND_ADDRESS + "/v1/triviadate/" + mt + "/" + dt
+    const url =  window._env_.REACT_APP_BACKEND_URL + "/v1/trivia/" + mt + "/" + dt
     const response = await fetch(url, {
       method: 'get',
-      headers: new Headers({
+      headers: {
         "Content-Type": "application/json"
-      })
+      }
     })
     console.log(response)
     const data = await response.json()
     console.log(data)
-    
+
   }
 
   render() {
