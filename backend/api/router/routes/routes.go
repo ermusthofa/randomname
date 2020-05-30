@@ -3,6 +3,7 @@ package routes
 import (
 	"net/http"
 
+	"github.com/ermusthofa/triviadate/backend/api/middleware"
 	"github.com/gorilla/mux"
 )
 
@@ -22,6 +23,19 @@ func SetupRoutes(r *mux.Router) *mux.Router {
 	v1 := r.PathPrefix("/v1").Subrouter()
 	for _, route := range Load() {
 		v1.Path(route.URI).HandlerFunc(route.Handler).Methods(route.Method)
+	}
+
+	return r
+
+}
+
+func SetupRoutesWithMiddleware(r *mux.Router) *mux.Router {
+
+	v1 := r.PathPrefix("/v1").Subrouter()
+	for _, route := range Load() {
+		v1.Path(route.URI).HandlerFunc(
+			middleware.MiddlewareJSON(route.Handler),
+		).Methods(route.Method)
 	}
 
 	return r
