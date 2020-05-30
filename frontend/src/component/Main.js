@@ -7,7 +7,8 @@ class Main extends React.Component {
   constructor() {
     super()
     this.state = {
-      loading: false
+      loading: false,
+      trivia: null
     }
   }
 
@@ -23,9 +24,9 @@ class Main extends React.Component {
         "Content-Type": "application/json"
       }
     })
-    console.log(response)
+
     const data = await response.json()
-    console.log(data)
+    this.setState({trivia: data.trivia})
 
   }
 
@@ -55,10 +56,10 @@ class Main extends React.Component {
             </div>
             
             <p className="masthead-subheading font-weight-light mb-0">Wanna know what ever happened in today's date?</p>
-            {this.state.loading ? 
+            {this.state.loading || !this.state.trivia ? 
               <p className="masthead-subheading font-weight-light mb-0">fetching today's date facts</p>
               :
-              <p className="masthead-subheading font-weight-light mb-0">fethced</p>
+              <p className="masthead-subheading font-weight-light mb-0">{this.state.trivia}</p>
             }
         </div>
       </main>
