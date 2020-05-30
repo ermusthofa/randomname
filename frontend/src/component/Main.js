@@ -8,7 +8,7 @@ class Main extends React.Component {
     super()
     this.state = {
       loading: false,
-      trivia: null
+      randomName: null
     }
   }
 
@@ -26,7 +26,8 @@ class Main extends React.Component {
     })
 
     const data = await response.json()
-    this.setState({trivia: data.trivia})
+
+    this.setState({randomName: data.results[0].name.first})
 
   }
 
@@ -55,11 +56,11 @@ class Main extends React.Component {
                 <div className="divider-custom-line"></div>
             </div>
             
-            <p className="masthead-subheading font-weight-light mb-0">Wanna know what ever happened in today's date?</p>
-            {this.state.loading || !this.state.trivia ? 
-              <p className="masthead-subheading font-weight-light mb-0">fetching today's date facts</p>
+            <p className="masthead-subheading font-weight-light mb-0">Wanna know a random name that might suit for you?</p>
+            {this.state.loading || !this.state.randomName ? 
+              <p className="masthead-subheading font-weight-light mb-0">fetching a random name</p>
               :
-              <p className="masthead-subheading font-weight-light mb-0">{this.state.trivia}</p>
+              <p className="masthead-subheading font-weight-light mb-0">{this.state.randomName}</p>
             }
         </div>
       </main>
