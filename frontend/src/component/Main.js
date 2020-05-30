@@ -14,10 +14,7 @@ class Main extends React.Component {
 
   async componentDidMount() {
 
-    const dt = new Date().getDate()
-    const mt = new Date().getMonth() + 1
-
-    const url =  window._env_.REACT_APP_BACKEND_URL + "/v1/trivia/" + mt + "/" + dt
+    const url =  window._env_.REACT_APP_BACKEND_URL + "/v1/randomname"
     const response = await fetch(url, {
       method: 'get',
       headers: {

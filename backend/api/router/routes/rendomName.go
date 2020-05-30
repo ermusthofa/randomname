@@ -6,10 +6,10 @@ import (
 	"github.com/ermusthofa/triviadate/backend/api/controller"
 )
 
-var triviaRoutes = []Route{
+var randomNameRoutes = []Route{
 	Route{
-		URI:     "/trivia/{month}/{date}",
+		URI:     "/randomname",
 		Method:  http.MethodGet,
-		Handler: controller.GetTrivia,
+		Handler: controller.GetRandomName,
 	},
 }

@@ -10,7 +10,7 @@ import (
 	"github.com/ermusthofa/triviadate/backend/api/response"
 )
 
-func GetTrivia(w http.ResponseWriter, r *http.Request) {
+func GetRandomName(w http.ResponseWriter, r *http.Request) {
 
 	var randomUser *model.RandomUser
 
