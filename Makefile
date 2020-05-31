@@ -41,8 +41,7 @@ build-all:
 ## chart-review : Review the chart manifest using 'less'.
 ## : You will be prompted wether you want to enable auto scale or not
 chart-review:
-	@read -p "Which environment do you want to review : " INPUT;											\
-		export SCALING_ENABLED=false;																										\
+	@export SCALING_ENABLED=false;																										\
 		read -p "Do you want to enable the auto-scaling [Y/N] : " FLAG;									\
 		if [[ $$FLAG == "Y" ]] || [[ $$FLAG == "y" ]]; then															\
 			export SCALING_ENABLED=true;																									\
