@@ -18,15 +18,15 @@ Used to fetch random user information based on https://api.randomuser.me public 
 ## Setup
 ---
 Environment used during development are as follow:
-1. Docker version 19.03.8
+1. Docker version 19.03.8</br>
    Refer to this [link](https://docs.docker.com/engine/install/) for how to get docker up and running
-2. Kubernetes version 1.18.0
+2. Kubernetes version 1.18.0</br>
    Refer to this [link](https://kubernetes.io/docs/setup/) for setup the kubernetes installation (while we are using `minikube` during development, and please let `ingress-controller` and `metrics-server` addons enabled as we need that addons to get these apps up and running)
-3. Go version 1.14.1
+3. Go version 1.14.1</br>
    Refer to this [link](https://golang.org/doc/install) how to setup Go
-4. Node.js version v12.17.0
+4. Node.js version v12.17.0</br>
    Refer to this [link](https://nodejs.org/en/download/) for how to get Node.js
-5. GNU Make 4.2.1
+5. GNU Make 4.2.1</br>
    Refer to this [link](https://www.gnu.org/software/make/) to get more information about GNU Make
 
 ## Makefile
