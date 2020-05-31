@@ -10,7 +10,7 @@ import (
 	"github.com/kelseyhightower/envconfig"
 	yaml "gopkg.in/yaml.v2"
 
-	"github.com/ermusthofa/triviadate/backend/api/model"
+	"github.com/ermusthofa/randomname/backend/api/model"
 )
 
 // Read yaml configuration file, if there are any environment variable

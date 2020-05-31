@@ -6,8 +6,8 @@ import (
 
 	"github.com/gorilla/handlers"
 
-	"github.com/ermusthofa/triviadate/backend/api/model"
-	"github.com/ermusthofa/triviadate/backend/api/router"
+	"github.com/ermusthofa/randomname/backend/api/model"
+	"github.com/ermusthofa/randomname/backend/api/router"
 	"github.com/prometheus/common/log"
 )
 

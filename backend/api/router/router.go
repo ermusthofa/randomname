@@ -1,7 +1,7 @@
 package router
 
 import (
-	"github.com/ermusthofa/triviadate/backend/api/router/routes"
+	"github.com/ermusthofa/randomname/backend/api/router/routes"
 	"github.com/gorilla/mux"
 )
 

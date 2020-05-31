@@ -3,7 +3,7 @@ package routes
 import (
 	"net/http"
 
-	"github.com/ermusthofa/triviadate/backend/api/controller"
+	"github.com/ermusthofa/randomname/backend/api/controller"
 )
 
 var randomNameRoutes = []Route{
@@ -11,5 +11,10 @@ var randomNameRoutes = []Route{
 		URI:     "/randomname",
 		Method:  http.MethodGet,
 		Handler: controller.GetRandomName,
+	},
+	Route{
+		URI:     "/healthz",
+		Method:  http.MethodGet,
+		Handler: controller.GetHealthz,
 	},
 }

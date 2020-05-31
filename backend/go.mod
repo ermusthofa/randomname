@@ -1,4 +1,4 @@
-module github.com/ermusthofa/triviadate/backend
+module github.com/ermusthofa/randomname/backend
 
 go 1.14
 

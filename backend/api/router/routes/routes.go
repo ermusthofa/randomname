@@ -3,7 +3,7 @@ package routes
 import (
 	"net/http"
 
-	"github.com/ermusthofa/triviadate/backend/api/middleware"
+	"github.com/ermusthofa/randomname/backend/api/middleware"
 	"github.com/gorilla/mux"
 )
 

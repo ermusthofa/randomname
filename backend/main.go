@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/ermusthofa/triviadate/backend/api"
-	"github.com/ermusthofa/triviadate/backend/api/config"
-	"github.com/ermusthofa/triviadate/backend/api/model"
+	"github.com/ermusthofa/randomname/backend/api"
+	"github.com/ermusthofa/randomname/backend/api/config"
+	"github.com/ermusthofa/randomname/backend/api/model"
 )
 
 func main() {
