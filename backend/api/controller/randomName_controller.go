@@ -3,7 +3,6 @@ package controller
 import (
 	"encoding/json"
 	"io/ioutil"
-	"log"
 	"net/http"
 
 	"github.com/ermusthofa/randomname/backend/api/model"
@@ -54,8 +53,6 @@ func fetchRandomUser() ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-
-	log.Println(body)
 
 	return body, nil
 

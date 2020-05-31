@@ -2,13 +2,13 @@ package api
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/gorilla/handlers"
 
 	"github.com/ermusthofa/randomname/backend/api/model"
 	"github.com/ermusthofa/randomname/backend/api/router"
-	"github.com/prometheus/common/log"
 )
 
 func Run(runtimeConfiguration model.Config) {
