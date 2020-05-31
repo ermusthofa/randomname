@@ -14,7 +14,7 @@ class Main extends React.Component {
 
   async componentDidMount() {
 
-    const url = window._env_.REACT_APP_BACKEND_URL + "/v1/randomname"
+    const url = "/api/v1/randomname"
     const response = await fetch(url, {
       method: 'get',
       headers: {
