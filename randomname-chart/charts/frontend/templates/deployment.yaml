@@ -50,6 +50,18 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: nginx-config
+              mountPath: "/home/"
+              readOnly: true
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/bash", "-c", "cat /home/default.conf | envsubst > /etc/nginx/conf.d/default.conf; nginx -s reload"]
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: {{ include "frontend.fullname" . }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
