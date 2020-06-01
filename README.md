@@ -14,7 +14,7 @@ Random name service consists of two microservices which are backend service and 
 - [x] Frontend: It can be configured to be accessible through a public domain
 - [x] Both of the services are containerized
 - [x] Microservices deployment to Kubernetes cluster can be done using Helm chart
-- [x] The Helm chart can accommodate auto-scaling and easily toggled on and off in a specific environment, the case here is that it need auto-scaling in production but certainly do not in staging and development
+- [x] The Helm chart can accommodate auto-scaling and easily toggled on and off in a specific environment, the case here is that it needs auto-scaling in production but certainly do not in staging and development
 - [x] Makefile that will simplify the building, containerizing, and deployment in various environments (production, staging, etc)
 
 ## Prerequisites
@@ -27,7 +27,7 @@ Environment used during development are as follow:
 3. Docker version 19.03.8</br>
    Refer to this [link](https://docs.docker.com/engine/install/) for how to get docker up and running
 4. Kubernetes version 1.18.0</br>
-   Refer to this [link](https://kubernetes.io/docs/setup/) for setup the kubernetes installation (while we are using `minikube` during development, and please let `ingress-controller` and `metrics-server` addons enabled as we need that addons to get these apps up and running)
+   Refer to this [link](https://kubernetes.io/docs/setup/) for setting up the kubernetes installation (while we are using [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/) during development, and please let `ingress-controller` and `metrics-server` addons enabled as we need that addons to get these apps up and running)
 5. Helm version 3.2.1</br>
    Refert to this [link](https://helm.sh/docs/intro/install/)
 6. GNU Make 4.2.1</br>
@@ -35,8 +35,8 @@ Environment used during development are as follow:
 
 ## Makefile
 ---
-To get these app ready, you can directly build the containers from the root directory of this repository.
-Run `make` to get details information about it's target
+To get these apps ready, you can directly build the containers from the root directory of this repository.
+Run `make` to get details information about its target
 ```bash
  Choose a target to run:
 
@@ -44,7 +44,7 @@ Run `make` to get details information about it's target
                   and `frontend`
   build-all       Build all the images
   chart-review    Review the chart manifest using 'less'.
-                  You will be prompted wether you want to enable auto scale or not
+                  You will be prompted whether you want to enable auto scale or not
   chart-deploy    Deploy the chart to kubernetes cluster.
 
 ```
@@ -53,16 +53,15 @@ Run `make` to get details information about it's target
 
 ## Helm Chart
 ---
-Helm chart used to simplify the deployment of the service. For mor information about `randomname-chart`, please refer to char README.
+Helm chart used to simplify the deployment of the services. For more informations about `randomname-chart`, please refer to chart [README](https://github.com/ermusthofa/randomname/blob/master/randomname-chart/README.md).
 
 ## Backend
 ---
-Backend microservices will allow frontend service to fetch random name based on https://randomuser.me. For a detailed explanation, please refer to the service README.
+Backend microservice will allow frontend service to fetch random name based on https://randomuser.me. For a detailed explanation, please refer to the service [README](https://github.com/ermusthofa/randomname/blob/master/backend/README.md).
 
 ## Frontend
 ---
-Frontend microservices will allow user to get random name fetched from backend service. For a detailed explanation, please refer to the service README.
+Frontend microservice will allow user to get random name fetched from backend service. For a detailed explanation, please refer to the service [README](https://github.com/ermusthofa/randomname/blob/master/frontend/README.md).
 
 ## License
-License
 This project is licensed under the MIT License - see the [License.md](https://github.com/ermusthofa/randomname/blob/master/LICENSE) file for details

@@ -1,7 +1,7 @@
 # Backend Service
 
 ## Overview
-Backend microservice will allow frontend service to fetch random name based on https://randomuser.me.
+Backend microservice will allow frontend service to fetch random name based on https://api.randomuser.me.
 
 
 ## Requirements
@@ -14,14 +14,14 @@ Backend microservice will allow frontend service to fetch random name based on h
 ### Setup
 To run service locally, you can build the project binaries or directly run `go run main.go` inside the `backend` service directory. You can change the default port exposed by the backend service by exporting `SERVER_LISTEN_ADDRESS` as an envar.
 
-This will print the following text to your console
+This will prints the following text to your console
 ```bash
 
 	Listening [::]:8080
 
 ```
 
-For more information on how to setup your Go environment, please visit [Go Installation](https://golang.org/doc/install) page.
+For more informations on how to setup your Go environment, please visit [Go Installation](https://golang.org/doc/install) page.
 
 ### Build
 | make target | Description                                                                                                            |
@@ -32,7 +32,7 @@ For more information on how to setup your Go environment, please visit [Go Insta
 | clean       | Stop and remove the docker images                                                                                      |
 
 ## Accessing the service
-After the container was build and run, you can access the service in:
+After the container is built and run, you can access the service in:
 
 ```bash
 http://localhost:8080
