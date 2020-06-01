@@ -1,5 +1,7 @@
 # Random Name Microservice
-Used to fetch random user information based on https://api.randomuser.me public API.
+
+## Overview
+Random name service consists of two microservice which are backend service and frontend servive. Backend service used to fetch random user information based on https://api.randomuser.me public API, and the result will be displayed through the frontend service.
 
 ---
 
@@ -15,19 +17,23 @@ Used to fetch random user information based on https://api.randomuser.me public 
 - [x] The Helm chart can accommodate auto-scaling and easily toggled on and off in a specific environment, the case here is that we need auto-scaling in production but we certainly do not in staging and development
 - [x] Makefile that will simplify the building, containerizing, and deployment in various environments (production, staging, etc)
 
-## Setup
+## Prerequisites
 ---
 Environment used during development are as follow:
-1. Docker version 19.03.8</br>
-   Refer to this [link](https://docs.docker.com/engine/install/) for how to get docker up and running
-2. Kubernetes version 1.18.0</br>
-   Refer to this [link](https://kubernetes.io/docs/setup/) for setup the kubernetes installation (while we are using `minikube` during development, and please let `ingress-controller` and `metrics-server` addons enabled as we need that addons to get these apps up and running)
-3. Go version 1.14.1</br>
+```
+1. Go version 1.14.1</br>
    Refer to this [link](https://golang.org/doc/install) how to setup Go
-4. Node.js version v12.17.0</br>
+2. Node.js version v12.17.0</br>
    Refer to this [link](https://nodejs.org/en/download/) for how to get Node.js
-5. GNU Make 4.2.1</br>
+3. Docker version 19.03.8</br>
+   Refer to this [link](https://docs.docker.com/engine/install/) for how to get docker up and running
+4. Kubernetes version 1.18.0</br>
+   Refer to this [link](https://kubernetes.io/docs/setup/) for setup the kubernetes installation (while we are using `minikube` during development, and please let `ingress-controller` and `metrics-server` addons enabled as we need that addons to get these apps up and running)
+5. Helm version 3.2.1</br>
+   Refert to this [link](https://helm.sh/docs/intro/install/)
+6. GNU Make 4.2.1</br>
    Refer to this [link](https://www.gnu.org/software/make/) to get more information about GNU Make
+```
 
 ## Makefile
 ---
@@ -45,9 +51,11 @@ Run `make` to get details information about it's target
 
 ```
 
+
+
 ## Helm Chart
 ---
-
+Helm chart used to simplify the deployment of the service. For mor information about `randomname-chart`, please refer to char README.
 
 ## Backend
 ---
@@ -57,4 +65,6 @@ Backend microservices will allow frontend service to fetch random name based on 
 ---
 Frontend microservices will allow user to get random name fetched from backend service. For a detailed explanation, please refer to the service README.
 
-### Author
+## License
+License
+This project is licensed under the MIT License - see the [License.md](https://github.com/ermusthofa/randomname/blob/master/LICENSE) file for details
