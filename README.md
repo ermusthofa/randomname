@@ -1,7 +1,7 @@
 # Random Name Microservice
 
 ## Overview
-Random name service consists of two microservice which are backend service and frontend servive. Backend service used to fetch random user information based on https://api.randomuser.me public API, and the result will be displayed through the frontend service.
+Random name service consists of two microservices which are backend service and frontend service. Backend service used to fetch random user information based on https://api.randomuser.me public API, and the result will be displayed through the frontend service.
 
 ---
 
@@ -9,18 +9,17 @@ Random name service consists of two microservice which are backend service and f
 - [x] Backend: Get the user information from the https://api.randomuser.me and return the user information via REST API
 - [x] Backend: Will remain private. Inaccessible by the public and only accessible from the frontend, it doesn't have a public domain and/or IP
 - [x] Backend: Written in Go language
-- [x] Frontend: request the user information to the backend and it will display the name information
+- [x] Frontend: Request the user information to the backend and it will display the name information
 - [x] Frontend: Written using React Framework
 - [x] Frontend: It can be configured to be accessible through a public domain
 - [x] Both of the services are containerized
 - [x] Microservices deployment to Kubernetes cluster can be done using Helm chart
-- [x] The Helm chart can accommodate auto-scaling and easily toggled on and off in a specific environment, the case here is that we need auto-scaling in production but we certainly do not in staging and development
+- [x] The Helm chart can accommodate auto-scaling and easily toggled on and off in a specific environment, the case here is that it need auto-scaling in production but certainly do not in staging and development
 - [x] Makefile that will simplify the building, containerizing, and deployment in various environments (production, staging, etc)
 
 ## Prerequisites
 ---
 Environment used during development are as follow:
-```
 1. Go version 1.14.1</br>
    Refer to this [link](https://golang.org/doc/install) how to setup Go
 2. Node.js version v12.17.0</br>
@@ -33,7 +32,6 @@ Environment used during development are as follow:
    Refert to this [link](https://helm.sh/docs/intro/install/)
 6. GNU Make 4.2.1</br>
    Refer to this [link](https://www.gnu.org/software/make/) to get more information about GNU Make
-```
 
 ## Makefile
 ---
