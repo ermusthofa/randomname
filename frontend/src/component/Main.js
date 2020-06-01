@@ -8,13 +8,13 @@ class Main extends React.Component {
     super()
     this.state = {
       loading: false,
-      randomName: null
+      randomFact: null
     }
   }
 
   async componentDidMount() {
 
-    const url = "/api/v1/randomname"
+    const url = "/api/v1/trivia"
     const response = await fetch(url, {
       method: 'get',
       headers: {
@@ -24,7 +24,7 @@ class Main extends React.Component {
 
     const data = await response.json()
 
-    this.setState({randomName: data.results[0].name.first})
+    this.setState({randomFact: data.trivia})
 
   }
 
@@ -53,11 +53,11 @@ class Main extends React.Component {
                 <div className="divider-custom-line"></div>
             </div>
             
-            <p className="masthead-subheading font-weight-light mb-0">Wanna know a random name that might suit for you?</p>
-            {this.state.loading || !this.state.randomName ? 
-              <p className="masthead-subheading font-weight-light mb-0">fetching a random name</p>
+            <p className="masthead-subheading font-weight-light mb-0">Wanna know a random fact that ever happened on this date?</p>
+            {this.state.loading || !this.state.randomFact ? 
+              <p className="masthead-subheading font-weight-light mb-0">fetching a random fact</p>
               :
-              <p className="masthead-subheading font-weight-light mb-0">{this.state.randomName}</p>
+              <p className="masthead-subheading font-weight-light mb-0">{this.state.randomFact}</p>
             }
         </div>
       </main>

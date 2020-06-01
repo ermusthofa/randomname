@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
+	"strconv"
+	"time"
 
 	"github.com/ermusthofa/randomname/backend/api/model"
 	"github.com/ermusthofa/randomname/backend/api/response"
@@ -21,27 +23,32 @@ func GetHealthz(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func GetRandomName(w http.ResponseWriter, r *http.Request) {
+func GetTrivia(w http.ResponseWriter, r *http.Request) {
 
-	var randomUser *model.RandomUser
+	var trivia *model.Trivia
 
-	x, err := fetchRandomUser()
+	x, err := fetchTrivia()
 	if err != nil {
 		response.ERROR(w, http.StatusGatewayTimeout, err)
 	}
 
-	err = json.Unmarshal(x, &randomUser)
+	y := "{\"trivia\":\"" + string(x) + "\"}"
+	z := []byte(y)
+
+	err = json.Unmarshal(z, &trivia)
 	if err != nil {
 		response.ERROR(w, http.StatusUnprocessableEntity, err)
 	}
 
-	response.JSON(w, http.StatusOK, randomUser)
+	response.JSON(w, http.StatusOK, trivia)
 
 }
 
-func fetchRandomUser() ([]byte, error) {
+func fetchTrivia() ([]byte, error) {
 
-	url := "https://api.randomuser.me"
+	_, month, date := time.Now().Date()
+
+	url := "http://numbersapi.com/" + strconv.Itoa(int(month)) + "/" + strconv.Itoa(date) + "/date"
 
 	resp, err := http.Get(url)
 	if err != nil {

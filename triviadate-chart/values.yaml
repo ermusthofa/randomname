@@ -1,4 +1,4 @@
-# Default values for randomname-chart.
+# Default values for triviadate-chart.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -23,7 +23,7 @@ global:
   # Used by backend service name, and as a frontend envar
   # REACT_APP_BACKEND_URL value
   backend:
-    serviceName: randomname-backend-service
+    serviceName: trivia-backend-service
 
 ##################################################################
 # Backend configuration directives
@@ -118,7 +118,7 @@ frontend:
       # kubernetes.io/ingress.class: nginx
       # kubernetes.io/tls-acme: "true"
     hosts:
-      - host: random-number.public-domain.example
+      - host: trivia-date.public-domain.example
         paths: ["/"]
     tls: []
     #  - secretName: chart-example-tls

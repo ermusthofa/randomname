@@ -1,7 +1,7 @@
 # Frontend Service
 
 ## Overview
-Frontend microservice will fetch the random name from backend service based on https://randomuser.me.
+Frontend microservice will fetch the random facts from backend service based on http://numbersapi.com.
 
 
 ## Requirements

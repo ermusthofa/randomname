@@ -1,15 +1,15 @@
-# Random Name Microservice
+# Trivia Date Microservice
 
 ## Overview
-Random name service consists of two microservices which are backend service and frontend service. Backend service used to fetch random user information based on https://api.randomuser.me public API, and the result will be displayed through the frontend service.
+Trivia Date service consists of two microservices which are backend service and frontend service. Backend service used to fetch random facts information based on http://numbersapi.com public API, and the result will be displayed through the frontend service.
 
 ---
 
 ## What this repository covers
-- [x] Backend: Get the user information from the https://api.randomuser.me and return the user information via REST API
+- [x] Backend: Fetch a trivia related to the current date using the API listed in http://numbersapi.com and return the trivia via REST API
 - [x] Backend: Will remain private. Inaccessible by the public and only accessible from the frontend, it doesn't have a public domain and/or IP
 - [x] Backend: Written in Go language
-- [x] Frontend: Request the user information to the backend and it will display the name information
+- [x] Frontend: Request the trivia information to the backend and it will display the trivia related to the current date
 - [x] Frontend: Written using React Framework
 - [x] Frontend: It can be configured to be accessible through a public domain
 - [x] Both of the services are containerized
@@ -53,15 +53,15 @@ Run `make` to get details information about its target
 
 ## Helm Chart
 ---
-Helm chart used to simplify the deployment of the services. For more informations about `randomname-chart`, please refer to chart [README](https://github.com/ermusthofa/randomname/blob/master/randomname-chart/README.md).
+Helm chart used to simplify the deployment of the services. For more informations about `triviadate-chart`, please refer to chart [README](https://github.com/ermusthofa/randomname/blob/numbersapi/triviadate-chart/README.md).
 
 ## Backend
 ---
-Backend microservice will allow frontend service to fetch random name based on https://randomuser.me. For a detailed explanation, please refer to the service [README](https://github.com/ermusthofa/randomname/blob/master/backend/README.md).
+Backend microservice will allow frontend service to fetch random facts based on http://numbersapi.com. For a detailed explanation, please refer to the service [README](https://github.com/ermusthofa/randomname/blob/numbersapi/backend/README.md).
 
 ## Frontend
 ---
-Frontend microservice will allow user to get random name fetched from backend service. For a detailed explanation, please refer to the service [README](https://github.com/ermusthofa/randomname/blob/master/frontend/README.md).
+Frontend microservice will allow user to get random facts fetched from backend service. For a detailed explanation, please refer to the service [README](https://github.com/ermusthofa/randomname/blob/numbersapi/frontend/README.md).
 
 ## License
-This project is licensed under the MIT License - see the [License.md](https://github.com/ermusthofa/randomname/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [License.md](https://github.com/ermusthofa/randomname/blob/numbersapi/LICENSE) file for details

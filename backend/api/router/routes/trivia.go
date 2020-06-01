@@ -6,11 +6,11 @@ import (
 	"github.com/ermusthofa/randomname/backend/api/controller"
 )
 
-var randomNameRoutes = []Route{
+var triviaRoutes = []Route{
 	Route{
-		URI:     "/randomname",
+		URI:     "/trivia",
 		Method:  http.MethodGet,
-		Handler: controller.GetRandomName,
+		Handler: controller.GetTrivia,
 	},
 	Route{
 		URI:     "/healthz",

@@ -1,7 +1,7 @@
 # Backend Service
 
 ## Overview
-Backend microservice will allow frontend service to fetch random name based on https://api.randomuser.me.
+Backend microservice will allow frontend service to fetch random facts based on http://numbersapi.com.
 
 
 ## Requirements
@@ -42,7 +42,7 @@ Currently there are only two endpoints, which are:
 | endpoints        | Description                                                                    |
 |------------------|--------------------------------------------------------------------------------|
 | `/v1/healthz`    | Used by Kubernetes health check                                                |
-| `/v1/randomname` | Used by frontend service to get the random name from https://api.randomuser.me |
+| `/v1/trivia`     | Used by frontend service to get the random facts from http://numbersapi.com    |
 
 
 ## License

@@ -1,14 +1,14 @@
-# Helm Chart for Random Name Service in Kubernetes
+# Helm Chart for Trivia Date Service in Kubernetes
 
 
-This project provides Helm Charts for deploying a Random Name service into any Kubernetes based cluster.
+This project provides Helm Charts for deploying a Trivia Date service into any Kubernetes based cluster.
 
 
 This project provides the following files:
 
 | File                                          | Description                                                                                                                               |
 |-----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| Charts.yaml                                   | The definition file for Random Name Service                                                                                               |
+| Charts.yaml                                   | The definition file for Trivia Date Service                                                                                               |
 | values.yaml                                   | Configurable values that are inserted into the sub-chars template files                                                                   |
 | charts/backend/Charts.yaml                    | The definition file for backend service                                                                                                   |
 | charts/backend/values.yaml                    | Configurable values if you wish to deploy this service independently                                                                      |
@@ -40,11 +40,11 @@ Using the Helm charts assumes the following prerequisites are completed:
 3. You have the Helm command line installed  
    [Helm](https://helm.sh/docs/intro/using_helm/) provides the command line tool for deploying this service using the Helm chart.
 
-4. You have created a Docker image for Random Name Service  
+4. You have created a Docker image for Trivia Date Service  
 
 
 
-## Configuring the Chart for Random Name Service
+## Configuring the Chart for Trivia Date Service
 
 The following table lists the configurable parameters of the Helm chart and their default values.
 
@@ -60,7 +60,7 @@ Configuration in this following table are pushed to all sub-charts during `helm 
 | `global.autoscaling.targetCPUUtilizationPercentage`    | Target CPU utilization percentage to scale the services                                     | `80`                         |
 | `global.autoscaling.targetMemoryUtilizationPercentage` | Target Memory utilization percentage to scale the services                                  | `80`                         |
 | `global.replicaCount`                                  | If the autoscaling is enabled, then this configuration will have no effects                 | `1`                          |
-| `global.backend.serviceName`                           | Kubernetes object service name to be referred by frontend service to access backend service | `randomname-backend-service` |
+| `global.backend.serviceName`                           | Kubernetes object service name to be referred by frontend service to access backend service | `triviadate-backend-service` |
 
 
 
@@ -106,7 +106,7 @@ Configuration in this following table are pushed to frontend sub-chart during `h
 | `frontend.service.port`               | Frontend service port                                                                                                  | `80`                                  |
 | `frontend.ingress.enabled`            | Toggle to enable or disable ingress object for frontend service                                                        | `true`                                |
 | `frontend.ingress.annotations`        | Annotations to add to the ingress                                                                                      |                                       |
-| `frontend.ingress.hosts.host`         | Host for this ingress to be routed to                                                                                  | `random-number.public-domain.example` |
+| `frontend.ingress.hosts.host`         | Host for this ingress to be routed to                                                                                  | `trivia-date.public-domain.example`   |
 | `frontend.ingress.hosts.paths`        | Path for this service to be routed to                                                                                  | `/`                                   |
 | `frontend.ingress.tls`                | TLS certificate to secure the ingress                                                                                  |                                       |
 | `frontend.resources.limits`           | Resource limits                                                                                                        |                                       |
@@ -114,15 +114,15 @@ Configuration in this following table are pushed to frontend sub-chart during `h
 
 
 
-## Using the Chart to deploy your Random Name Service to Kubernetes
+## Using the Chart to deploy your Trivia Date Service to Kubernetes
 
-In order to use the Helm chart to deploy Random Name Service in Kubernetes, run the following commands:
+In order to use the Helm chart to deploy Trivia Date Service in Kubernetes, run the following commands:
 
 1. From this project directory, run:  
    ```sh
    helm install `release-name` .
    ```
-   This deploys and runs Random Name Service in Kubernetes within `default` namespace, and prints the following text to the console:
+   This deploys and runs Trivia Date Service in Kubernetes within `default` namespace, and prints the following text to the console:
    
    ```sh
    NAME: `release-name`
@@ -142,10 +142,10 @@ In order to use the Helm chart to deploy Random Name Service in Kubernetes, run 
 2. Open your web browser to http://random-name.public-domain.example<br />
    Note: You need integrate your DNS to resolve this domain (or local hosts file)
    
-3. Random Name Service should now be visible in your browser.
+3. Trivia Date Service should now be visible in your browser.
 
 
-## Uninstalling Random Name Service
+## Uninstalling Trivia Date Service
 If you installed your application with:
 
 ```sh

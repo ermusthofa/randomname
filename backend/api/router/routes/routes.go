@@ -14,7 +14,7 @@ type Route struct {
 }
 
 func Load() []Route {
-	routes := randomNameRoutes
+	routes := triviaRoutes
 	return routes
 }
 
