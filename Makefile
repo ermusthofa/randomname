@@ -50,7 +50,8 @@ chart-review:
 		${HELM_REVIEW} --set global.autoscaling.enabled=$$SCALING_ENABLED								\
 			${CHART_NAME} | less
 
-## chart-deploy : Deploy the chart to kubernetes cluster.
+## chart-deploy : Deploy the chart to the Kubernetes cluster. You will be prompted where
+## : you want deploy the chart and wether you want to enable auto scale or not
 chart-deploy:
 	@read -p "Which environment do you want to deploy this apps : " INPUT;						\
 		export SCALING_ENABLED=false;																										\

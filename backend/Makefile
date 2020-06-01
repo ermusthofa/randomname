@@ -16,12 +16,12 @@ help: Makefile
 	@sed -n 's/^##//p' $< | column -t -s ':' |  sed -e 's/^/ /'
 	@echo
 
-## build: Build the image
+## build: Create the project docker image
 build:
 	docker build -t ${SERVICE} .
 
-## run: Run the container. Port 8080 exported by default.
-## : You can change the port by exportting SERVER_LISTEN_ADDRESS envar
+## run: Run the container. Port 8080 exposed by default.
+## : You can change the port by exporting SERVER_LISTEN_ADDRESS envar
 run:
 	@${RUN} ${SERVICE}
 
@@ -32,5 +32,5 @@ stop:
 clean-image:
 	@-docker rmi ${SERVICE}
 
-## clean: Stop and remove the images
+## clean: Stop and remove the docker images
 clean: stop clean-image
