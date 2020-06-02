@@ -1,11 +1,14 @@
 SERVICE=frontend
+PROJECT=numbersapi
 export FRONTEND_LISTEN_ADDRESS?=8081
 export REACT_APP_BACKEND_URL?=http://localhost:8080
 
 RUN=docker run -d --rm \
 		-e REACT_APP_BACKEND_URL=${REACT_APP_BACKEND_URL} \
 		-p ${FRONTEND_LISTEN_ADDRESS}:80 \
-		--name ${SERVICE}
+		--name ${SERVICE}-${PROJECT}
+
+REMOVE_DANGLING=docker rmi `docker images -f "dangling=true" -q`
 
 MAKEFLAGS += --silent
 
@@ -19,19 +22,20 @@ help: Makefile
 
 ## build: Create the project docker image
 build:
-	docker build -t ${SERVICE} .
-
+	docker build -t ${SERVICE}:${PROJECT} .
+	@-${REMOVE_DANGLING}
+	
 ## run: Run the container. Port 8081 exposed by default.
 ## : You can change the port by exporting FRONTEND_SERVER_ADDRESS envar
 run:
-	@${RUN} ${SERVICE}
+	@${RUN} ${SERVICE}:${PROJECT}
 
 ## stop: Stop the service container
 stop:
-	@-docker stop ${SERVICE}
+	@-docker stop ${SERVICE}-${PROJECT}
 
 clean-image:
-	@-docker rmi ${SERVICE}
+	@-docker rmi ${SERVICE}:${PROJECT}
 
 ## clean: Stop and remove the docker images
 clean: stop clean-image

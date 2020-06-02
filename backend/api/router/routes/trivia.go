@@ -12,9 +12,4 @@ var triviaRoutes = []Route{
 		Method:  http.MethodGet,
 		Handler: controller.GetTrivia,
 	},
-	Route{
-		URI:     "/healthz",
-		Method:  http.MethodGet,
-		Handler: controller.GetHealthz,
-	},
 }

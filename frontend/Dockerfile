@@ -14,9 +14,7 @@ RUN yarn build
 FROM nginx:1.17.10-alpine
 WORKDIR /usr/share/nginx/html
 COPY --from=build /usr/src/app/build .
-COPY ./env.sh .
-COPY ./.env .
+COPY ./nginx/default.conf .
 RUN apk add --no-cache bash
-RUN chmod +x env.sh
 EXPOSE 80
-CMD ["/bin/bash", "-c", "/usr/share/nginx/html/env.sh && nginx -g \"daemon off;\""]
+CMD ["/bin/bash", "-c", "/bin/cat default.conf | envsubst > /etc/nginx/conf.d/default.conf; nginx -g \"daemon off;\""]

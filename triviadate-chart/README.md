@@ -73,7 +73,7 @@ Configuration in this following table are pushed to backend sub-chart during `he
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------|----------------|
 | `backend.image.repository`           | Image repository for backend service                                                                                   | `backend`      |
 | `backend.image.pullPolicy`           | Image pull policy for backend service                                                                                  | `ifNotPresent` |
-| `backend.image.tag`                  | Overrides the image tag which default is the chart appVersion.                                                         | `latest`       |
+| `backend.image.tag`                  | Overrides the image tag which default is the chart appVersion.                                                         | `numbersapi`   |
 | `backend.serviceAccount.create`      | Specifies whether a service account should be created                                                                  | `false`        |
 | `backend.serviceAccount.annotations` | Annotations to add to the service account                                                                              |                |
 | `backend.serviceAccount.name`        | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |                |
@@ -95,7 +95,7 @@ Configuration in this following table are pushed to frontend sub-chart during `h
 |---------------------------------------|------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
 | `frontend.image.repository`           | Image repository for frontend service                                                                                  | `frontend`                            |
 | `frontend.image.pullPolicy`           | Image pull policy for frontend service                                                                                 | `ifNotPresent`                        |
-| `frontend.image.tag`                  | Overrides the image tag which default is the chart appVersion.                                                         | `latest`                              |
+| `frontend.image.tag`                  | Overrides the image tag which default is the chart appVersion.                                                         | `numbersapi`                          |
 | `frontend.serviceAccount.create`      | Specifies whether a service account should be created                                                                  | `false`                               |
 | `frontend.serviceAccount.annotations` | Annotations to add to the service account                                                                              |                                       |
 | `frontend.serviceAccount.name`        | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |                                       |
@@ -139,7 +139,7 @@ In order to use the Helm chart to deploy Trivia Date Service in Kubernetes, run 
    kubectl get deployment [--namespace namespace]
    ```
    
-2. Open your web browser to http://random-name.public-domain.example<br />
+2. Open your web browser to http://trivia-date.public-domain.example<br />
    Note: You need integrate your DNS to resolve this domain (or local hosts file)
    
 3. Trivia Date Service should now be visible in your browser.

@@ -32,6 +32,8 @@ Environment used during development are as follow:
    Refer to this [link](https://helm.sh/docs/intro/install/) for how to install helm
 6. GNU Make 4.2.1</br>
    Refer to this [link](https://www.gnu.org/software/make/) to get more informations about GNU Make
+7. Docker-compose version 1.25.5</br>
+   Refer to this [link](https://docs.docker.com/compose/install/) to get more informations about docker-compose.
 
 > ℹ️ **Please be noted**, when using Minikube, build the image using the minikube docker env, and this projects doesn't push any Docker images to any Docker repository. It assume your kubernetes cluster have an access to the services Docker image. Or you could push the images to the repository and do the necessary configuration.
 
@@ -42,16 +44,19 @@ Run `make` to get details information about its target
 ```bash
  Choose a target to run:
 
-  build           Build the image with specified target. Accepted value `backend`
-                  and `frontend`
-  build-all       Build all the images
-  chart-review    Review the chart manifest using 'less'.
-                  You will be prompted whether you want to enable auto scale or not
-  chart-deploy    Deploy the chart to kubernetes cluster.
+  build             Build the image with specified target. Accepted value `backend`
+                    and `frontend`
+  build-all         Build all the images
+  compose-up        Run docker compose and shows the services log.
+  compose-daemon    Run docker compose in a background.
+  chart-review      Review the chart manifest using 'less'.
+                    You will be prompted wether you want to enable auto scale or not
+  chart-deploy      Deploy the chart to the Kubernetes cluster. You will be prompted where
+                    you want deploy the chart and wether you want to enable auto scale or not
 
 ```
 
-
+> ℹ️ Application are exposed by default on port `8081`, you access this application in your browser `http://localhost:8081` after you run `make compose-up` or `make compose-daemon`.
 
 ## Helm Chart
 ---

@@ -41,7 +41,7 @@ http://localhost:8080
 Currently there are only two endpoints, which are:
 | endpoints        | Description                                                                    |
 |------------------|--------------------------------------------------------------------------------|
-| `/v1/healthz`    | Used by Kubernetes health check                                                |
+| `/healthz`       | Used by Kubernetes health check                                                |
 | `/v1/trivia`     | Used by frontend service to get the random facts from http://numbersapi.com    |
 
 
