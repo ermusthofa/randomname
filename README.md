@@ -5,6 +5,10 @@ Random name service consists of two microservices which are backend service and 
 
 ---
 
+![](img/random-name-kubernetes.gif)
+
+*refresh your browser to get the new name*
+
 ## What this repository covers
 - [x] Backend: Get the user information from the https://api.randomuser.me and return the user information via REST API
 - [x] Backend: Will remain private. Inaccessible by the public and only accessible from the frontend, it doesn't have a public domain and/or IP
