@@ -34,9 +34,16 @@ func SetupRoutesWithMiddleware(r *mux.Router) *mux.Router {
 	v1 := r.PathPrefix("/v1").Subrouter()
 	for _, route := range Load() {
 		v1.Path(route.URI).HandlerFunc(
-			middleware.MiddlewareJSON(route.Handler),
+			middleware.MiddlewareLogger(
+				middleware.MiddlewareJSON(route.Handler),
+			),
 		).Methods(route.Method)
 	}
+
+	r.HandleFunc(
+		healthcheck.URI,
+		healthcheck.Handler,
+	).Methods(healthcheck.Method)
 
 	return r
 

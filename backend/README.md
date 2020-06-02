@@ -41,7 +41,7 @@ http://localhost:8080
 Currently there are only two endpoints, which are:
 | endpoints        | Description                                                                    |
 |------------------|--------------------------------------------------------------------------------|
-| `/v1/healthz`    | Used by Kubernetes health check                                                |
+| `/healthz`       | Used by Kubernetes health check                                                |
 | `/v1/randomname` | Used by frontend service to get the random name from https://api.randomuser.me |
 
 

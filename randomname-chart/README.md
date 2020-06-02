@@ -73,7 +73,7 @@ Configuration in this following table are pushed to backend sub-chart during `he
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------|----------------|
 | `backend.image.repository`           | Image repository for backend service                                                                                   | `backend`      |
 | `backend.image.pullPolicy`           | Image pull policy for backend service                                                                                  | `ifNotPresent` |
-| `backend.image.tag`                  | Overrides the image tag which default is the chart appVersion.                                                         | `latest`       |
+| `backend.image.tag`                  | Overrides the image tag which default is the chart appVersion.                                                         | `randomname`   |
 | `backend.serviceAccount.create`      | Specifies whether a service account should be created                                                                  | `false`        |
 | `backend.serviceAccount.annotations` | Annotations to add to the service account                                                                              |                |
 | `backend.serviceAccount.name`        | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |                |
@@ -95,7 +95,7 @@ Configuration in this following table are pushed to frontend sub-chart during `h
 |---------------------------------------|------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
 | `frontend.image.repository`           | Image repository for frontend service                                                                                  | `frontend`                            |
 | `frontend.image.pullPolicy`           | Image pull policy for frontend service                                                                                 | `ifNotPresent`                        |
-| `frontend.image.tag`                  | Overrides the image tag which default is the chart appVersion.                                                         | `latest`                              |
+| `frontend.image.tag`                  | Overrides the image tag which default is the chart appVersion.                                                         | `randomname`                          |
 | `frontend.serviceAccount.create`      | Specifies whether a service account should be created                                                                  | `false`                               |
 | `frontend.serviceAccount.annotations` | Annotations to add to the service account                                                                              |                                       |
 | `frontend.serviceAccount.name`        | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |                                       |
@@ -106,7 +106,7 @@ Configuration in this following table are pushed to frontend sub-chart during `h
 | `frontend.service.port`               | Frontend service port                                                                                                  | `80`                                  |
 | `frontend.ingress.enabled`            | Toggle to enable or disable ingress object for frontend service                                                        | `true`                                |
 | `frontend.ingress.annotations`        | Annotations to add to the ingress                                                                                      |                                       |
-| `frontend.ingress.hosts.host`         | Host for this ingress to be routed to                                                                                  | `random-number.public-domain.example` |
+| `frontend.ingress.hosts.host`         | Host for this ingress to be routed to                                                                                  | `random-name.public-domain.example`   |
 | `frontend.ingress.hosts.paths`        | Path for this service to be routed to                                                                                  | `/`                                   |
 | `frontend.ingress.tls`                | TLS certificate to secure the ingress                                                                                  |                                       |
 | `frontend.resources.limits`           | Resource limits                                                                                                        |                                       |

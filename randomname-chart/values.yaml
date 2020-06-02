@@ -35,7 +35,7 @@ backend:
     repository: backend
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: latest
+    tag: randomname
 
   serviceAccount:
     # Specifies whether a service account should be created
@@ -83,7 +83,7 @@ frontend:
     repository: frontend
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: latest
+    tag: randomname
 
   serviceAccount:
     # Specifies whether a service account should be created
@@ -118,7 +118,7 @@ frontend:
       # kubernetes.io/ingress.class: nginx
       # kubernetes.io/tls-acme: "true"
     hosts:
-      - host: random-number.public-domain.example
+      - host: random-name.public-domain.example
         paths: ["/"]
     tls: []
     #  - secretName: chart-example-tls

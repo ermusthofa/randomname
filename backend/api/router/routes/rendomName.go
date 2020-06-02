@@ -12,9 +12,4 @@ var randomNameRoutes = []Route{
 		Method:  http.MethodGet,
 		Handler: controller.GetRandomName,
 	},
-	Route{
-		URI:     "/healthz",
-		Method:  http.MethodGet,
-		Handler: controller.GetHealthz,
-	},
 }

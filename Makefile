@@ -2,10 +2,7 @@ SHELL := /bin/bash
 
 CHART_NAME := randomname-chart
 
-RUN=docker run -d --rm \
-		-e SERVER_LISTEN_ADDRESS=${SERVER_LISTEN_ADDRESS} \
-		-p ${SERVER_LISTEN_ADDRESS}:${SERVER_LISTEN_ADDRESS} \
-		--name ${SERVICE}
+REMOVE_DANGLING=docker rmi `docker images -f "dangling=true" -q`
 
 BUILD=docker build -t
 
@@ -24,7 +21,7 @@ help: Makefile
 build:
 	@read -p "Which service you wanna build? " INPUT; 													\
 		if [[ $$INPUT == "frontend" ]] || [[ $$INPUT == "backend" ]]; then				\
-			${BUILD} $$INPUT:latest $$INPUT/ ;																			\
+			${BUILD} $$INPUT:randomname $$INPUT/ ;																	\
 			echo -e "Repository\t\t\tTag\t\t\tImage ID\tCreated\t\t\tSize";					\
 			docker images | grep $$INPUT ;																					\
 		else																																			\
@@ -33,10 +30,19 @@ build:
 
 ## build-all : Build all the images
 build-all:
-	@${BUILD} backend:latest backend
-	@${BUILD} frontend:latest frontend
+	@${BUILD} backend:randomname backend
+	@${BUILD} frontend:randomname frontend
+	@-${REMOVE_DANGLING}
 	@echo -e "Repository\t\t\tTag\t\t\tImage ID\tCreated\t\t\tSize"
 	@docker images | egrep -e "backend|frontend"
+
+## compose-up : Run docker compose and shows the services log.
+compose-up:
+	@docker-compose up
+
+## compose-daemon : Run docker compose in a background.
+compose-daemon:
+	@docker-compose up -d
 
 ## chart-review : Review the chart manifest using 'less'.
 ## : You will be prompted wether you want to enable auto scale or not
