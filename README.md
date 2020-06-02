@@ -21,17 +21,19 @@ Trivia Date service consists of two microservices which are backend service and 
 ---
 Environment used during development are as follow:
 1. Go version 1.14.1</br>
-   Refer to this [link](https://golang.org/doc/install) how to setup Go
+   Refer to this [link](https://golang.org/doc/install) on how to setup Go
 2. Node.js version v12.17.0</br>
    Refer to this [link](https://nodejs.org/en/download/) for how to get Node.js
 3. Docker version 19.03.8</br>
-   Refer to this [link](https://docs.docker.com/engine/install/) for how to get docker up and running
+   Refer to this [link](https://docs.docker.com/engine/install/) for how to get Docker up and running
 4. Kubernetes version 1.18.0</br>
    Refer to this [link](https://kubernetes.io/docs/setup/) for setting up the kubernetes installation (while we are using [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/) during development, and please let `ingress-controller` and `metrics-server` addons enabled as we need that addons to get these apps up and running)
 5. Helm version 3.2.1</br>
-   Refert to this [link](https://helm.sh/docs/intro/install/)
+   Refer to this [link](https://helm.sh/docs/intro/install/) for how to install helm
 6. GNU Make 4.2.1</br>
-   Refer to this [link](https://www.gnu.org/software/make/) to get more information about GNU Make
+   Refer to this [link](https://www.gnu.org/software/make/) to get more informations about GNU Make
+
+> ℹ️ **Please be noted**, when using Minikube, build the image using the minikube docker env, and this projects doesn't push any Docker images to any Docker repository. It assume your kubernetes cluster have an access to the services Docker image. Or you could push the images to the repository and do the necessary configuration.
 
 ## Makefile
 ---
