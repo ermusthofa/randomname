@@ -39,7 +39,7 @@ Environment used during development are as follow:
 7. Docker-compose version 1.25.5</br>
    Refer to this [link](https://docs.docker.com/compose/install/) to get more informations about docker-compose.
 
-> ℹ️ **Please be noted**, when using Minikube, build the image using the minikube docker env, and this projects doesn't push any Docker images to any Docker repository. It assume your kubernetes cluster have an access to the services Docker image. Or you could push the images to the repository and do the necessary configuration.
+> ℹ️ **Please be noted**, when using Minikube, build the image using the minikube docker env, and this project doesn't push any Docker images to any Docker repository. It assumes your kubernetes cluster have an access to the services Docker image. Or you could push the images to the repository and do the necessary configuration.
 
 ## Makefile
 ---
@@ -60,7 +60,7 @@ Run `make` to get details information about its target
 
 ```
 
-> ℹ️ Application are exposed by default on port `8081`, you access this application in your browser `http://localhost:8081` after you run `make compose-up` or `make compose-daemon`.
+> ℹ️ Applications are exposed by default on port `8081`, you access this application in your browser `http://localhost:8081` after you run `make compose-up` or `make compose-daemon`.
 
 ## Helm Chart
 ---

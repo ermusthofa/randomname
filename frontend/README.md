@@ -32,7 +32,7 @@ Run `yarn` inside the frontend service directory to fetch all the dependencies. 
 | clean       | Stop and remove the docker images                                                                                        |
 
 
-> ℹ️ **Please be noted**, when you run this service through `make run` or `docker run`, this service won't be able to fetch the data from the backend, since request from this service proxy its request through nginx. Use `docker-compose` on top of this repository instead.
+> ℹ️ **Please be noted**, when you run this service through `make run` or `docker run`, this service won't be able to fetch the data from the backend. That's because request from this service is proxied through Nginx inside of the container, hence it won't be able to call the backend service. Use `docker-compose` on top of this repository instead.
 
 ## Accessing the service
 After the container is built and run, you can access the service in your browser:
